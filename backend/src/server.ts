@@ -1,13 +1,12 @@
 import fastify from 'fastify'
-import { PrismaClient } from '@prisma/client'
+import cors from '@fastify/cors'
+import { memoriesRoute } from './routes/memories'
 const app = fastify()
-const prisma = new PrismaClient()
 
-// HTTP Method: GET, POST, PUT, DELETE, PATCH
-app.get('/users', async () => {
-  const users = await prisma.user.findMany();
-  return users
+app.register(cors, {
+  origin: true,
 })
+app.register(memoriesRoute)
 
 app
   .listen({
