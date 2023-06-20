@@ -9,7 +9,7 @@ export function Profile () {
       <Image src={avatarUrl} width={40} height={40} alt='' className="rounded-full h-10 w-10" />
       <p className='text-sm leading-snug max-w-[140px]'>
         {name}
-        <a href="" className="block text-red-400 hover:text-red-300">
+        <a href="/api/auth/logout" className="block text-red-400 hover:text-red-300">
           Quero sair
         </a>
       </p>
